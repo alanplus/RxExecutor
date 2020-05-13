@@ -14,6 +14,14 @@ public abstract class SimpleSchedulerRunnable<T> implements RxScheduleRunnable<T
 
     @Override
     public T onError(Throwable throwable) {
+        scheduleOnMainThread(null, throwable);
         return null;
     }
+
+    @Override
+    public void scheduleOnMainThread(T t) {
+        scheduleOnMainThread(t, null);
+    }
+
+    abstract void scheduleOnMainThread(T t, Throwable e);
 }
