@@ -23,5 +23,5 @@ public abstract class SimpleSchedulerRunnable<T> implements RxScheduleRunnable<T
         scheduleOnMainThread(t, null);
     }
 
-    abstract void scheduleOnMainThread(T t, Throwable e);
+    public abstract void scheduleOnMainThread(T t, Throwable e);
 }
